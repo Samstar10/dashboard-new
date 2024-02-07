@@ -39,4 +39,13 @@ export class LoanDataServiceService {
     }
     return of(monthlyProfits);
   }
+
+  getLoansByCountry(): Observable<any[]> {
+    const loansByCountry = [
+      { country: 'Kenya', amount: 30000 },
+      { country: 'Tanzania', amount: 25000 },
+      { country: 'Uganda', amount: 20000 },
+    ]
+    return of(loansByCountry)
+  }
 }

@@ -8,7 +8,7 @@ import { Observable, catchError, map, throwError } from 'rxjs';
 })
 export class MyAppServicesService {
 
-  private apiUrl = 'http://loanish.lol:8090/api/v1/user/adminLogin'
+  private apiUrl = 'https://loanish.lol/api/v1/user/adminLogin'
 
   constructor(private http: HttpClient) { }
 

@@ -1,3 +1,28 @@
-<a href="">Dashboard</a>
-<a href="">Users</a>
-<a href="">Logout</a>
+<!-- <a [routerLink]="['dashboard']">Dashboard</a>
+<a [routerLink]="['users']">Users</a>
+<a href="">Logout</a> -->
+
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['dashboard']">
+          <i class="mdi mdi-grid-large menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['users']">
+          <i class="mdi mdi-account menu-icon"></i>
+          <span class="menu-title">Users</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="mdi mdi-logout menu-icon"></i>
+          <span class="menu-title">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  

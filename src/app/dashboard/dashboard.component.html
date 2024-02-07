@@ -1,4 +1,229 @@
-<app-total-loans-borrowed></app-total-loans-borrowed>
+<!-- <app-total-loans-borrowed></app-total-loans-borrowed>
 <app-amount-borrowed-last-month></app-amount-borrowed-last-month>
 <app-total-profits></app-total-profits>
 <app-profits-per-month></app-profits-per-month>
+<app-defaulted-loans></app-defaulted-loans>
+<app-loan-borrowed-country></app-loan-borrowed-country> -->
+
+<!-- <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <div class="me-3">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+                <span class="icon-menu"></span>
+            </button>
+        </div>
+        <div>
+            <a class="navbar-brand brand-logo" href="#">
+                <img src="../../assets/stanbic.jpeg" alt="logo" />
+            </a>
+            <a class="navbar-brand brand-logo-mini" href="#">
+                <img src="../../assets/stanbic.jpeg" alt="logo" />
+            </a>
+        </div>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+            <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                <h1 class="welcome-text">Admin Dashboard</h1>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <p>Admin</p>
+            </li>
+        </ul>
+    </div>
+</nav>
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['dashboard']">
+          <i class="mdi mdi-grid-large menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['users']">
+          <i class="mdi mdi-account menu-icon"></i>
+          <span class="menu-title">Users</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="mdi mdi-logout menu-icon"></i>
+          <span class="menu-title">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Total Loans Borrowed</h4>
+        <p class="card-text">{{totalLoans}}</p>
+    </div>
+</div>
+<div>
+    <h2>Loan Defaulters</h2>
+    <p>{{defaultedLoans}}</p>
+</div>
+<div>
+    <h2>Amount Borrowed Last Month</h2>
+    <p>{{amountBorrowedLastMonth}}</p>
+</div>
+<div>
+    <h2>Total Profits</h2>
+    <p>{{totalProfits}}</p>
+</div>
+<div>
+    <h2>Profits Per Month</h2>
+    <canvas baseChart
+            [datasets]="barChartData" 
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            ></canvas>
+</div>
+<div>
+    <h3>Loan Borrowed in Each Country</h3>
+    <canvas baseChart
+            [datasets]="pieChartData"
+            [labels]="pieChartLabels"
+            [options]="pieChartOptions"
+            [type]="pieChartType"
+            >
+    </canvas>
+</div> -->
+  
+<!-- Navbar -->
+<nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <div class="me-3">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+                <span class="icon-menu"></span>
+            </button>
+        </div>
+        <div>
+            <a class="navbar-brand brand-logo" href="">
+                <img src="../../assets/stanbic.jpeg" alt="logo" />
+            </a>
+            <a class="navbar-brand brand-logo-mini" href="">
+                <img src="../../assets/stanbic.jpeg" alt="logo" />
+            </a>
+        </div>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+            <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                <h1 class="welcome-text blue-text">Admin Dashboard</h1>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <p>Admin</p>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Container -->
+<div class="container-fluid page-body-wrapper">
+  <!-- Sidebar navigation -->
+  <nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/dashboard']">
+          <i class="mdi mdi-grid-large menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/users']">
+          <i class="mdi mdi-account menu-icon"></i>
+          <span class="menu-title">Users</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="mdi mdi-logout menu-icon"></i>
+          <span class="menu-title">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Panel -->
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <!-- Content sections here -->
+      <!-- Total Loans Borrowed -->
+      <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Total Loans Borrowed</h4>
+              <p class="card-text">{{totalLoans}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loan Defaulters -->
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Loan Defaulters</h4>
+              <p class="card-text">{{defaultedLoans}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Amount Borrowed Last Month -->
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Amount Borrowed Last Month</h4>
+              <p class="card-text">{{amountBorrowedLastMonth}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Profits -->
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Total Profits</h4>
+              <p class="card-text">{{totalProfits}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Profits Per Month (Bar Graph) -->
+        <div class="col-lg-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Profits Per Month</h4>
+              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"></canvas>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Loan Borrowed in Each Country (Pie Chart) -->
+        <div class="col-lg-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Loan Borrowed in Each Country</h4>
+              <canvas baseChart [datasets]="pieChartData" [labels]="pieChartLabels" [options]="pieChartOptions" [type]="pieChartType"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- content-wrapper ends -->
+
+    <!-- Footer -->
+    <!-- Add your footer here -->
+  </div>
+  <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
